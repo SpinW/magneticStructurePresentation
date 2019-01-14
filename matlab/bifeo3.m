@@ -147,6 +147,7 @@ end
 figure; hold all;
 plot(J1, km, '.');
 plot(J1, (D./J1)./(2*5.58), '-');
+xlabel('J_1 (meV)'); ylabel('k (r.l.u.)');
 
 J1 = 4;
 J2 = 0;
@@ -162,6 +163,7 @@ end
 figure; hold all;
 plot(D, km, '.');
 plot(D, (D./J1)./(2*5.58), '-');
+xlabel('D (meV)'); ylabel('k (r.l.u.)');
 
 % Note the whilst the theoretical expression is good for small
 % D/J1, as D gets larger compared to J1, the calculated k deviates
