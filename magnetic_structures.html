@@ -329,6 +329,7 @@
             </content>
         </div>
     </section>
+
     <section class="showit" id="intro2">
         <div class="grid-wrapper">
             <div class="header">
@@ -417,14 +418,17 @@
                 <div class="section">Magnetic Structure Theory</div>
             </div>
             <content>
-                <h3>Magnetic Structure Theory Refresher</h3>
-                <figure class="image" style="width: 100%; margin-left:30%">
-                    <p><img src="images/propvect.svg" style="width: 30%;" alt="propagation_vector">
-                    <figcaption class="text"></figcaption>
-                </figure>
-                <p> The $j^{\mathrm{th}}$ magnetic moment in unit cell $l$ which is separated from the first unit cell $0$ by the
-                    vector $t$ can be expressed as a Fourier series, <p>
-                <p> $$ \mathbf{m}_j = \sum_{n} \mathbf{\Psi}_j^{\mathbf{k}_n} \exp^{-2\pi i\mathbf{k}_n\cdot\mathbf{t}} $$ </p>
+                <div class="profile">
+                    <div class="basics">
+                        <img src="images/propvect.svg" alt="propagation_vector">
+                    </div>
+                    <div class="details">
+                        <h3>Magnetic Structure Theory Refresher</h3>
+                        <p>The $j^{\mathrm{th}}$ magnetic moment in unit cell $l$ which is separated from the first unit cell $0$ by the
+                            vector $t$ can be expressed as a Fourier series,</p><br>
+                        $$ \mathbf{m}_j = \sum_{n} \mathbf{\Psi}_j^{\mathbf{k}_n} \exp^{-2\pi i\mathbf{k}_n\cdot\mathbf{t}} $$
+                    </div>
+                </div>
             </content>
         </div>
     </section>
@@ -438,19 +442,17 @@
             <content>
                 <div class="profile">
                     <div class="basics">
-                        <figure class="image" style="width: 100%; margin-left:15%">
-                        <p><img src="images/propvect.svg" style="width: 70%;" alt="propagation_vector">
-                        </figure>
-                        <div class="role" style="text-align:center">$\mathbf{m}_j = \sum_{n} \mathbf{\Psi}_j^{\mathbf{k}_n} \exp^{-2\pi i\mathbf{k}_n\cdot\mathbf{t}}$</div>
+                        <img src="images/propvect.svg" alt="propagation_vector">
+                        <div class="name">$\mathbf{m}_j = \sum_{n} \mathbf{\Psi}_j^{\mathbf{k}_n} \exp^{-2\pi i\mathbf{k}_n\cdot\mathbf{t}}$</div>
                     </div>
-                    <div id="details">
+                    <div class="details">
                         <p> For many materials, there is only a single propagation vector $k$: </p>
                         <p> $$ \mathbf{m}_j = \mathbf{\Psi}_j^{\mathbf{k}} \exp^{-2\pi i\mathbf{k}\cdot\mathbf{t}} $$ </p>
                         <p> The allowed propagation vectors $\mathbf{k}_n$ are related to each to each other by the rotation
                             symmetry of the crystal structure (they are the <i>star</i> of $k$). </p>
                         <p> In the case of a single-$k$ magnetic structure, the spin wave Hamiltonian is invariant under all
                             rotations </p>
-                        <p> This allows the Hamiltonian to be expressed in a rotating coordinate system which allows SpinW to 
+                        <p> This allows the Hamiltonian to be expressed in a rotating coordinate system which allows SpinW to
                             calculate more efficiently than codes which define the magnetic structure in terms of a supercell. </p>
                     </div>
                 </div>
@@ -467,18 +469,16 @@
             <content>
                 <div class="profile">
                     <div class="basics">
-                        <figure class="image" style="width: 100%; margin-left:15%">
-                        <p><img src="images/propvect.svg" style="width: 70%;" alt="propagation_vector">
-                        </figure>
-                        <div class="role" style="text-align:center">$\mathbf{m}_j = \sum_{n} \mathbf{\Psi}_j^{\mathbf{k}_n} \exp^{-2\pi i\mathbf{k}_n\cdot\mathbf{t}}$</div>
+                        <img src="images/propvect.svg" alt="propagation_vector">
+                        <div class="name">$\mathbf{m}_j = \sum_{n} \mathbf{\Psi}_j^{\mathbf{k}_n} \exp^{-2\pi i\mathbf{k}_n\cdot\mathbf{t}}$</div>
                     </div>
-                    <div id="details">
+                    <div class="details">
                         <p> The <i>basis vector</i> $\mathbf{\Psi}_j^{\mathbf{k}}$ is in general complex. </p>
                         <p> A complex basis vector requires both $\mathbf{k}$ and $-\mathbf{k}$ components to produce a real moment </p>
                         <p> $$ \mathbf{m}_j = \mathbf{\Psi}_j^{\mathbf{k}} \left[\cos(-2\pi \mathbf{k}\cdot\mathbf{t}) + i\sin(-2\pi \mathbf{k}\cdot\mathbf{t})\right]
-                                            + \mathbf{\Psi}_j^{-\mathbf{k}} \left[\cos(2\pi \mathbf{k}\cdot\mathbf{t}) + i\sin(2\pi \mathbf{k}\cdot\mathbf{t})\right] $$ </p>
-                        <p> $$ = 2\operatorname{Re}(\mathbf{\Psi}_j^{\mathbf{k}}) \cos(-2\pi \mathbf{k}\cdot\mathbf{t}) 
-                               + 2\operatorname{Im}(\mathbf{\Psi}_j^{\mathbf{k}}) \sin(-2\pi \mathbf{k}\cdot\mathbf{t}) $$ </p>
+                            + \mathbf{\Psi}_j^{-\mathbf{k}} \left[\cos(2\pi \mathbf{k}\cdot\mathbf{t}) + i\sin(2\pi \mathbf{k}\cdot\mathbf{t})\right] $$ </p>
+                        <p> $$ = 2\operatorname{Re}(\mathbf{\Psi}_j^{\mathbf{k}}) \cos(-2\pi \mathbf{k}\cdot\mathbf{t})
+                            + 2\operatorname{Im}(\mathbf{\Psi}_j^{\mathbf{k}}) \sin(-2\pi \mathbf{k}\cdot\mathbf{t}) $$ </p>
                         <p> because $\mathbf{\Psi}_j^{-\mathbf{k}} = (\mathbf{\Psi}_j^{\mathbf{k}})^{\dagger} = \operatorname{Re}(\mathbf{\Psi}_j^{\mathbf{k}}) - i\operatorname{Im}(\mathbf{\Psi}_j^{\mathbf{k}})$ </p>
                         <p> A real basis vector will only give a collinear magnetic structure, but possibly with a varying moment </p>
                         <p> A complex basis vector with imaginery part perpendicular to the real part can give helical magnetic structures. </p>
@@ -505,7 +505,7 @@
     </div>
     </section>
 
-    <section class="showit" id="mag_str_input1">
+    <section class="blank" id="mag_str_input1">
         <div class="grid-wrapper">
             <div class="header">
                 <div class="logo"></div>
@@ -539,13 +539,11 @@
             <content>
                 <div class="profile">
                     <div class="basics">
-                        <div class="role" style="width:60%">
                             <table class="defaulttable">
                                 <tr> <td>Propagation vector:</td> <td><b><code>mag_str.k</code></b></td> </tr>
                                 <tr> <td>Basis vector:</td> <td><b><code>mag_str.F</code></b></td> </tr>
                                 <tr> <td>Magnetic supercell:</td> <td><b><code>mag_str.nExt</code></b></td> </tr>
                             </table>
-                        </div>
                     </div>
                     <div id="details">
                         <p> A helical or modulated single-$k$ structure can be stored by using <b><code>k</code></b> and <b><code>F</code></b>
@@ -569,105 +567,99 @@
             <content>
                 <div class="profile">
                     <div class="basics">
-                        <div class="role" style="width:60%">
                             <table class="defaulttable">
                                 <tr> <td>Propagation vector:</td> <td><b><code>mag_str.k</code></b></td> </tr>
                                 <tr> <td>Basis vector:</td> <td><b><code>mag_str.F</code></b></td> </tr>
                                 <tr> <td>Magnetic supercell:</td> <td><b><code>mag_str.nExt</code></b></td> </tr>
                             </table>
-                        </div>
                     </div>
                     <div id="details">
                         <p> A supercell magnetic structure can be stored by using a real <b><code>F</code></b> and <b><code>nExt</code></b>
                             and setting <b><code>k</code></b> to zero <b><code>[0 0 0]</code></b>.
                         <p> The number of magnetic moments stored in <code>F</code> are: <code>nMagExt = prod(nExt)*nMagAtom</code> </p>
                         <p> So, <b><code>F</code></b> should be an <code>nMagExt</code>-column matrix with moments in the following order:</p>
-                        <figure class="image" style="width: 100%">
-                            <p><img src="images/momentlayout.svg" style="width: 30%;" alt="Mag_str">
+                        <figure class="image" style="width: 100%;">
+                            <img src="images/momentlayout.svg" style="width: 30%; display: block; margin-left: auto; margin-right: auto;" alt="Mag_str">
                             <figcaption class="text">Ordering of the unit cell in the magnetic super-cell.</figcaption>
                         </figure>
             </content>
         </div>
     </section>
 
-    <section class="showit" id="mag_str_input4">
+    <section class="blank" id="mag_str_input4">
         <div class="grid-wrapper">
             <div class="header">
                 <div class="logo"></div>
                 <div class="section">Storing magnetic structure</div>
             </div>
             <content>
-                <figure class="image" style="width: 100%; margin-left:30%">
-                    <figcaption class="text">1D AFM spin chain</figcaption>
-                    <img src="images/spinw_chain.svg" style="width: 30%;" alt="spin_chain">
-                </figure>
-                <p> </p>
-                <p> </p>
-                <div class="row">
-                    <div class="column">Single-$k$ mode</div>
-                    <div class="column">Supercell mode</div>
-                </div>
-                <div class="row">
-                    <div class="column">
-                    <pre style="font-size:larger">
-mag_str.N_ext = [1 1 1];
-mag_str.k     = [1/2 0 0];
-mag_str.F     = [0; 
-                 1; 
-                 0];
-                    </pre>
+                <h2>1D AFM spin chain</h2>
+                <div class="container" style="display: grid;    grid-template-columns: 47.5% 5% auto;
+                                                                grid-template-rows: 30% 5% auto; height: 100%;">
+                    <div style="grid-column-start:1; grid-column-end:4; grid-row-start:1; grid-row-end:2">
+                        <figure class="image" style="width: 100%;">
+                            <img src="images/spinw_chain.svg" style="width: 30%;" alt="spin_chain">
+                        </figure>
                     </div>
-                    <div class="column">
-                    <pre style="font-size:larger">
-mag_str.N_ext = [2 1 1];
+                    <div style="grid-column-start:1; grid-column-end:2; grid-row-start:3; grid-row-end:4">
+                        <h4>Single-$k$ mode</h4>
+                        <figure class="code">
+                        <pre><code>mag_str.N_ext = [1 1 1];
+mag_str.k     = [1/2 0 0];
+mag_str.F     = [0;
+                 1;
+                 0];</code></pre>
+                        </figure>
+                    </div>
+                    <div style="grid-column-start:3; grid-column-end:4; grid-row-start:3; grid-row-end:4">
+                        <h4>Supercell mode</h4>
+                        <figure class="code">
+                        <pre><code>mag_str.N_ext = [2 1 1];
 mag_str.k     = [0 0 0];
-mag_str.F     = [0 0; 
-                 1 -1; 
-                 0 0];
-                    </pre>
+mag_str.F     = [0 0;
+                 1 -1;
+                 0 0];</code></pre>
+                        </figure>
                     </div>
                 </div>
             </content>
         </div>
     </section>
 
-    <section class="showit" id="mag_str_input5">
+    <section class="blank" id="mag_str_input5">
         <div class="grid-wrapper">
             <div class="header">
                 <div class="logo"></div>
                 <div class="section">Storing magnetic structure</div>
             </div>
             <content>
-                <figure class="image" style="width: 100%; margin-left:30%">
-                    <figcaption class="text">120$^{\circ}$ structure on a triangular lattice</figcaption>
-                    <img src="images/tri120.svg" style="width: 30%;" alt="spin_chain">
-                </figure>
-                <p> </p>
-                <p> </p>
-                <div class="row">
-                    <div class="column">Single-$k$ mode</div>
-                    <div class="column">Supercell mode</div>
+                <h2>120$^{\circ}$ structure on a triangular lattice</h2>
+            <div class="container" style="  display: grid;
+                                            grid-template-rows: 27.5% 5% 25% 5% auto;
+                                            height: 100%;">
+                <div style="grid-row-start:1; grid-row-end:2">
+                        <img src="images/tri120.svg"  style="display: block; margin-left: auto; margin-right: auto;" alt="spin_chain">
                 </div>
-                <div class="row">
-                    <div class="column">
-                    <pre style="font-size:large">
-mag_str.N_ext = [1 1 1];
+                <div style="grid-row-start:3; grid-row-end:4">
+                    <h4>Single-$k$ mode</h4>
+                    <figure class="code">
+                    <pre><code>mag_str.N_ext = [1 1 1];
 mag_str.k     = [1/3 1/3 0];
-mag_str.F     = [1; 
-                 i; 
-                 0];
-                    </pre>
-                    </div>
-                    <div class="column">
-                    <pre style="font-size:large">
-mag_str.N_ext = [3 3 1];
+mag_str.F     = [1;
+                 i;
+                 0];</code></pre></figure>
+                </div>
+                <div style="grid-row-start:7; grid-row-end:8">
+                    <h4>Supercell mode</h4>
+                    <figure class="code">
+                    <pre><code>mag_str.N_ext = [3 3 1];
 mag_str.k     = [0 0 0];
 mag_str.F     = [1 -0.5  -0.5  -0.5  -0.5     1  -0.5     1  -0.5;
                  0 0.86 -0.86  0.86 -0.86     0 -0.86     0  0.86;
-                 0    0     0     0     0     0     0     0     0];
-                    </pre>
-                    </div>
+                 0    0     0     0     0     0     0     0     0];</code></pre>
+                    </figure>
                 </div>
+            </div>
             </content>
         </div>
     </section>
@@ -684,7 +676,7 @@ mag_str.F     = [1 -0.5  -0.5  -0.5  -0.5     1  -0.5     1  -0.5;
     </div>
     </section>
 
-    <section class="showit" id="genmagstr1">
+    <section class="blank" id="genmagstr1">
         <div class="grid-wrapper">
             <div class="header">
                 <div class="logo"></div>
@@ -693,12 +685,11 @@ mag_str.F     = [1 -0.5  -0.5  -0.5  -0.5     1  -0.5     1  -0.5;
             <content>
                 <h3> Generating a magnetic structure </h3> <br>
                 <p> Rather than changing the <code>mag_str</code> field directly, it is recommended to use
-                    the <code>genmagstr()</code> function to generate the magnetic structure<p>
+                    the <code>genmagstr()</code> function to generate the magnetic structure</p>
                 <p> This function checks your input for errors and also provides short-cuts for common
-                    use-cases, using various <code>mode</code>s </p> 
-                <p> These are: </p> <br>
-                <div style="width:70%">
-                    <table>
+                    use-cases, using various <code>mode</code>s</p>
+                <p> These are: </p>
+                    <table style="width:70%">
                         <tr> <td><code>helical</code></td> <td>single-$k$ helix</td> </tr>
                         <tr> <td><code>fourier</code></td> <td>single-$k$ helix or modulated structure</td> </tr>
                         <tr> <td><code>rotate</code></td> <td>uniform rotation of all moments</td> </tr>
@@ -707,102 +698,101 @@ mag_str.F     = [1 -0.5  -0.5  -0.5  -0.5     1  -0.5     1  -0.5;
                         <tr> <td><code>func</code></td> <td>using a function to generate <code>k</code>, <code>F</code>, <code>nExt</code></td> </tr>
                         <tr> <td><code>random</code></td> <td>random moments</td> </tr>
                     </table>
-                </div>
                 <p> <code>genmagstr()</code> always respects <code>nExt</code>, so a combination of an input <code>nExt</code> and <code>k</code> will
-                    generate a magnetic supercell which is extended first by <code>nExt</code> and then by <code>k</code> <p>
+                    generate a magnetic supercell which is extended first by <code>nExt</code> and then by <code>k</code> </p>
             </content>
         </div>
     </section>
 
-    <section class="showit" id="genmagstr2">
+    <section class="blank" id="genmagstr2">
         <div class="grid-wrapper">
             <div class="header">
                 <div class="logo"></div>
                 <div class="section">Generate magnetic structure</div>
             </div>
             <content>
-                <div class="profile">
-                    <div class="basics">
-                        <div class="role" style="width:40%">
-                             <p><code>spinw.genmagstr('mode',...)</code></p>
-                        </div>
-                    </div>
-                    <div id="details">
+                <h2><code>spinw.genmagstr('mode',...)</code></h2>
                         <h3>HELICAL</h3>
-                        <p class="tab">extend the given structure by applying rotations on the moments</p>
-                        <p class="tab">moments are either given in rotating frame formalism (S,n) or as complex vectors (S)</p>
-                        <p class="tab"><code>chain.genmagstr('mode', 'helical',</code></p> 
-                        <p style="text-indent:120px"><code>'S', [1; 0; 0], 'n', [0 0 1], 'k', [1/8 0 0])</code></p> 
-                        <p class="tab"><code>chain.genmagstr('mode', 'helical',</code></p> 
-                        <p style="text-indent:120px"><code>'S', [1; 1i; 0], 'k', [1/8 0 0])</code></p> 
+                        <ul>
+                            <li>Extend the given structure by applying rotations on the moments</li>
+                            <li>Moments are either given in rotating frame formalism (S,n) or as complex vectors (S)</li>
+                        </ul>
+                <figure class="code">
+                        <pre><code class="matlab">chain.genmagstr('mode', 'helical', 'S', [1; 0; 0], 'n', [0 0 1], 'k', [1/8 0 0])
+chain.genmagstr('mode', 'helical', 'S', [1; 1i; 0], 'k', [1/8 0 0])</code></pre>
+                </figure><br>
                         <h3>FOURIER</h3>
-                        <p class="tab">generate a single-$k$ structure using Fourier components in <code>S</code> </p>
-                        <p class="tab"><code>chain.genmagstr('mode', 'fourier', 'nExt', [8 1 1],</code></p> 
-                        <p style="text-indent:120px"><code>'S', {[1; 1i; 0] [1/8 0 0]})</code></p>
+                        <ul>
+                            <li>Generate a single-$k$ structure using Fourier components in <code>S</code></li>
+                        </ul>
+                <figure class="code">
+                        <pre><code class="matlab">chain.genmagstr('mode', 'fourier', 'nExt', [8 1 1], 'S', {[1; 1i; 0] [1/8 0 0]})</code></pre>
+                </figure><br>
                         <h3>ROTATE</h3>
-                        <p class="tab">uniform rotation of all existing moments</p>
-                        <p class="tab"><code>chain.genmagstr('mode', 'rotate', 'n', [1 0 0])</code></p>
-                    </div>
-                </div>
+                        <ul>
+                            <li>Uniform rotation of all existing moments</li>
+                        </ul>
+                <figure class="code">
+                        <pre><code class="matlab">chain.genmagstr('mode', 'rotate', 'n', [1 0 0])</code></pre>
+                </figure>
             </content>
         </div>
     </section>
 
-    <section class="showit" id="genmagstr3">
+    <section class="blank" id="genmagstr3">
         <div class="grid-wrapper">
             <div class="header">
                 <div class="logo"></div>
                 <div class="section">Generate magnetic structure</div>
             </div>
             <content>
-                <div class="profile">
-                    <div class="basics">
-                        <div class="role" style="width:60%">
-                             <p><code>spinw.genmagstr('mode',...)</code></p>
-                        </div>
-                    </div>
-                    <div id="details">
-                        <h3>DIRECT</h3>
-                        <p class="tab">direct input of every field</p>
-                        <p class="tab"><code>chain.genmagstr('mode', 'direct', 'nExt', [4 1 1],</code></p>
-                        <p style="text-indent:120px"><code>'S', [1 0 -1 0; 0 1 0 -1; 0 0 0 0]);</code></p>
-                        <h3>TILE</h3>
-                        <p class="tab">tile a magnetic supercell using the given data</p>
-                        <p class="tab"><code>chain.genmagstr('mode', 'tile', 'nExt', [2 1 1],</code></p>
-                        <p style="text-indent:120px"><code>'S', [1 0; 0 -1; 0 0]);</code></p>
-                    </div>
-                </div>
+                <h2><code>spinw.genmagstr('mode',...)</code></h2>
+                <h3>DIRECT</h3>
+                <ul>
+                    <li>Direct input of every field</li>
+                </ul>
+                <figure class="code">
+                        <pre><code class="matlab">chain.genmagstr('mode', 'direct', 'nExt', [4 1 1], 'S', [1 0 -1 0; 0 1 0 -1; 0 0 0 0]);</code></pre>
+                </figure><br>
+                <h3>TILE</h3>
+                <ul>
+                    <li>Tile a magnetic supercell using the given data</li>
+                </ul>
+                <figure class="code">
+                    <pre><code class="matlab">chain.genmagstr('mode', 'tile', 'nExt', [2 1 1], 'S', [1 0; 0 -1; 0 0]);</code></pre>
+                </figure>
             </content>
         </div>
     </section>
 
-    <section class="showit" id="genmagstr4">
+    <section class="blank" id="genmagstr4">
         <div class="grid-wrapper">
             <div class="header">
                 <div class="logo"></div>
                 <div class="section">Generate magnetic structure</div>
             </div>
             <content>
-                <div class="profile">
-                    <div class="basics">
-                        <div class="role" style="width:40%">
-                             <p><code>spinw.genmagstr('mode',...)</code></p>
-                        </div>
-                    </div>
-                    <div id="details">
-                        <h3>FUNC</h3>
-                        <p class="tab">give parameters to a constraint function to generate magnetic structure</p>
-                        <p class="tab"><code>chain.genmagstr('mode', 'func', 'func', @gm_spherical3d,</code></p> 
-                        <p style="text-indent:120px"><code>'x', [pi/2 0.2 pi/2 0.4 pi/2 0.6 pi/2 0.8 0 0 0 0 0])</code></p>
-                        <p class="tab">SpinW provides two built-in functions, <code>gm_planar</code> and <code>gm_spherical3d</code></p>
-                        <p class="tab"><code>gm_planar</code> produces a coplanar structure with fittable relative 
-                        <p style="text-indent:120px">angles between spins and propagation vectors</p>
-                        <p class="tab"><code>gm_spherical3d</code> is a generalisation of this for non-coplanar structure</p>
-                        <h3>RANDOM</h3>
-                        <p class="tab">random magnetization vectors</p>
-                        <p class="tab"><code>chain.genmagstr('mode', 'random', 'nExt', [4 1 1])</code></p>
-                    </div>
-                </div>
+                <h2><code>spinw.genmagstr('mode',...)</code></h2>
+                <h3>FUNC</h3>
+                <ul>
+                    <li>Give parameters to a constraint function to generate magnetic structure</li>
+                </ul>
+                <figure class="code">
+                    <pre><code class="matlab">chain.genmagstr('mode', 'func', 'func', @gm_spherical3d, 'x', [pi/2 0.2 pi/2 0.4 pi/2 0.6 pi/2 0.8 0 0 0 0 0])</code></pre>
+                </figure>
+                <p>SpinW provides two built-in functions, <code>gm_planar</code> and <code>gm_spherical3d</code></p>
+                <ul>
+                    <li><code>gm_planar</code> produces a coplanar structure with fittable relative angles between spins and propagation vectors</li>
+                    <li><code>gm_spherical3d</code> is a generalisation of this for non-coplanar structure</li>
+                    <br>
+                </ul>
+                <h3>RANDOM</h3>
+                <ul>
+                    <li>Random magnetization vectors</li>
+                </ul>
+                <figure class="code">
+                    <pre><code class="matlab">chain.genmagstr('mode', 'random', 'nExt', [4 1 1])</code></pre>
+                </figure>
             </content>
         </div>
     </section>
@@ -944,6 +934,7 @@ fct.genmagstr('mode', 'random', 'nExt', [2 2 1])</code></pre>
                     <div style="grid-column-start:3; grid-column-end:4; grid-row-start:3; grid-row-end:4">
                     <img src="images/square_random.svg" style="width: available; float: right" alt="spin_chain">
                     </div>
+                </div>
             </content>
         </div>
     </section>
@@ -1094,8 +1085,7 @@ fct.genmagstr('mode', 'random', 'nExt', [2 2 1])</code></pre>
             <content>
                 <div class="profile">
                     <div class="basics">
-                        <figure class="image" style="width: 100%;">
-                            <div class="container" style="display: grid; grid-template-rows: 35% 5% 35%; justify-items: center;">
+                            <div class="container" style="display: grid; grid-template-rows: 35% 5% 35%; justify-items: center; height: 60%">
                                 <div style="grid-row-start:1; grid-row-end:2">
                                     <img src="images/cairo_lattice.svg" style="height:100%; width: auto" alt="propagation_vector">
                                 </div>
@@ -1103,7 +1093,6 @@ fct.genmagstr('mode', 'random', 'nExt', [2 2 1])</code></pre>
                                     <img src="images/cairo_orth.svg" style="height:100% ; width: auto" alt="spin_chain">
                                 </div>
                             </div>
-                        </figure>
                         <div class="name" > Cairo lattice </div>
                     </div>
                     <div id="details">
