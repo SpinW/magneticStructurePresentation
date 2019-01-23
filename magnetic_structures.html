@@ -480,8 +480,8 @@
                         <p> $$ = 2\operatorname{Re}(\mathbf{\Psi}_j^{\mathbf{k}}) \cos(-2\pi \mathbf{k}\cdot\mathbf{t})
                             + 2\operatorname{Im}(\mathbf{\Psi}_j^{\mathbf{k}}) \sin(-2\pi \mathbf{k}\cdot\mathbf{t}) $$ </p>
                         <p> because $\mathbf{\Psi}_j^{-\mathbf{k}} = (\mathbf{\Psi}_j^{\mathbf{k}})^{\dagger} = \operatorname{Re}(\mathbf{\Psi}_j^{\mathbf{k}}) - i\operatorname{Im}(\mathbf{\Psi}_j^{\mathbf{k}})$ </p>
-                        <p> A real basis vector will only give a collinear magnetic structure, but possibly with a varying moment </p>
-                        <p> A complex basis vector with imaginery part perpendicular to the real part can give helical magnetic structures. </p>
+                        <p> A real basis vector will only give a collinear magnetic structure, but possibly with a varying moment magnitude </p>
+                        <p> A complex basis vector with imaginary part perpendicular to the real part can give helical magnetic structures. </p>
                         <p> <br> </p>
                         <p> Reference: A.S. Wills, <i>J. Phys. IV France</i>, <b>11</b> (Pr9) 133-158 (2001). </p>
                         <p> <a href="https://doi.org/10.1051/jp4:2001906" target="_blank">https://doi.org/10.1051/jp4:2001906</a> </p>
@@ -512,7 +512,7 @@
                 <div class="section">Storing magnetic structure</div>
             </div>
             <content>
-                <p> SpinW stores the magnetic structure is stored in the <b><code>spinw.mag_str</code></b> field. </p>
+                <p> SpinW stores the magnetic structure in the <b><code>spinw.mag_str</code></b> field. </p>
                 <p> It can store arbitrary magnetic structures using Fourier components. </p>
                 <br>
                 <p> Subfields: </p>
@@ -612,7 +612,7 @@ mag_str.F     = [0;
                         </figure>
                     </div>
                     <div style="grid-column-start:3; grid-column-end:4; grid-row-start:3; grid-row-end:4">
-                        <h4>Supercell mode</h4>
+                        <h4>Supercell mode $ $</h4>
                         <figure class="code">
                         <pre><code>mag_str.N_ext = [2 1 1];
 mag_str.k     = [0 0 0];
@@ -686,8 +686,7 @@ mag_str.F     = [1 -0.5  -0.5  -0.5  -0.5     1  -0.5     1  -0.5;
                 <p> Rather than changing the <code>mag_str</code> field directly, it is recommended to use
                     the <code>genmagstr()</code> function to generate the magnetic structure</p>
                 <p> This function checks your input for errors and also provides short-cuts for common
-                    use-cases, using various <code>mode</code>s</p>
-                <p> These are: </p>
+                    use-cases, using various <code>mode</code>s:</p>
                     <table style="width:70%">
                         <tr> <td><code>helical</code></td> <td>single-$k$ helix</td> </tr>
                         <tr> <td><code>fourier</code></td> <td>single-$k$ helix or modulated structure</td> </tr>
@@ -852,7 +851,7 @@ tri.genmagstr('mode', 'rotate', 'n', [0 0 1], 'phid', 30)</code></pre>
                         </figure>
                     </div>
                     <div style="grid-column-start:3; grid-column-end:4; grid-row-start:5; grid-row-end:6">
-                        <img src="images/tri120_rot.svg" style="width: available;" alt="spin_chain">
+                        <img src="images/tri120_rot.svg" style="width: 80%;" alt="spin_chain">
                     </div>
                 </div>
             </content>
@@ -878,7 +877,7 @@ sq.genmagstr('mode', 'direct', 'S', [0 0 0 0; 1 -1 -1 1; 0 0 0 0], 'nExt', [2 2 
                     </figure>
                 </div>
                     <div style="grid-column-start:3; grid-column-end:4; grid-row-start:1; grid-row-end:2">
-                        <img src="images/square_afm.svg" style="width: available;"   alt="spin_chain">
+                        <img src="images/square_afm.svg" style="width: 75%;"   alt="spin_chain">
                     </div>
                     <div style="grid-column-start:1; grid-column-end:2; grid-row-start:3; grid-row-end:4">
                     <b> Tile </b>
@@ -891,7 +890,7 @@ fct.genmagstr('mode', 'tile', 'S', [0 0; 1 -1; 0 0], 'nExt', [2 2 1])</code></pr
                     </figure>
                 </div>
                     <div style="grid-column-start:3; grid-column-end:4; grid-row-start:3; grid-row-end:4">
-                        <img src="images/square_bc_afm.svg" style="width: available;" alt="spin_chain">
+                        <img src="images/square_bc_afm.svg" style="width: 75%;" alt="spin_chain">
                     </div>
                 </div>
             </content>
@@ -919,7 +918,7 @@ fct.genmagstr('mode', 'func', 'func', @gm_planar, 'x0', [0 pi/2 1/2 1/2 1 0 0])<
                     <p>Parameters for gm_planar is: [phi1 phi2 ... kx ky kz n_theta n_phi], n_theta and n_phi define the normal of the plane. phiN are relative phases within the plane</p>
                 </div>
                     <div style="grid-column-start:3; grid-column-end:4; grid-row-start:1; grid-row-end:2">
-                        <img src="images/square_func.svg" style="width: available; float: right" alt="spin_chain">
+                        <img src="images/square_func.svg" style="width: 70%; float: right" alt="spin_chain">
                     </div>
                     <div style="grid-column-start:1; grid-column-end:2; grid-row-start:3; grid-row-end:4">
                     <b>Random</b>
@@ -931,7 +930,7 @@ fct.genmagstr('mode', 'random', 'nExt', [2 2 1])</code></pre>
                     </figure>
                 </div>
                     <div style="grid-column-start:3; grid-column-end:4; grid-row-start:3; grid-row-end:4">
-                    <img src="images/square_random.svg" style="width: available; float: right" alt="spin_chain">
+                    <img src="images/square_random.svg" style="width: 70%; float: right" alt="spin_chain">
                     </div>
                 </div>
             </content>
@@ -957,9 +956,7 @@ fct.genmagstr('mode', 'random', 'nExt', [2 2 1])</code></pre>
                 <div class="section">Optimize magnetic structures</div>
             </div>
             <content>
-                <p>The magnetic structure can be optimised as a classical ground state of the spin Hamiltonian.</p>
-                <p>Three methods are available:</p>
-                <br>
+                <p>The magnetic structure can be optimised as a classical ground state of the spin Hamiltonian, using:</p>
                 <h2><code>sw.optmagk()</code></h2>
                 <div style="margin-left:40px">
                     <ul>
@@ -1042,7 +1039,7 @@ fct.genmagstr('mode', 'random', 'nExt', [2 2 1])</code></pre>
     <section class="subsection color--radiant" id="Example1">
         <div class="grid-wrapper">
             <div class="logo"></div>
-            <h1>Propagation vector of cycloid in BiFeO</h1>
+            <h1>Propagation vector of cycloid in BiFeO<sub>3</sub></h1>
             <div class="description">
                 Download the script here: <a href="matlab/bifeo3.m" style="color: white"><code>bifeo3.m</code></a>
             </div>
@@ -1058,8 +1055,8 @@ fct.genmagstr('mode', 'random', 'nExt', [2 2 1])</code></pre>
             <content>
                 <div class="profile">
                     <div class="basics">
-                        <figure class="image" style="width: 100%; margin-left:15%">
-                        <p><img src="images/bfo_cycloid.png" style="width: 70%;" alt="propagation_vector">
+                        <figure class="image" style="width: 70%; margin-right:15%">
+                        <p><img src="images/bfo_cycloid.png" style="width: 100%;" alt="propagation_vector">
                         </figure>
                         <div class="name"> BiFeO<sub>3</sub> cycloid </div>
                     </div>
@@ -1104,14 +1101,9 @@ fct.genmagstr('mode', 'random', 'nExt', [2 2 1])</code></pre>
             <content>
                 <div class="profile">
                     <div class="basics">
-                            <div class="container" style="display: grid; grid-template-rows: 35% 5% 35%; justify-items: center; height: 60%">
-                                <div style="grid-row-start:1; grid-row-end:2">
-                                    <img src="images/cairo_lattice.svg" style="height:100%; width: auto" alt="propagation_vector">
-                                </div>
-                                <div style="grid-row-start:3; grid-row-end:4">
-                                    <img src="images/cairo_orth.svg" style="height:100% ; width: auto" alt="spin_chain">
-                                </div>
-                            </div>
+                        <figure class="image" style="width: 70%; margin-right:15%">
+                            <img src="images/cairo_lattice.svg" style="height:100%; width: auto" alt="propagation_vector">
+                        </figure>
                         <div class="name" > Cairo lattice </div>
                     </div>
                     <div id="details">
@@ -1121,12 +1113,18 @@ fct.genmagstr('mode', 'random', 'nExt', [2 2 1])</code></pre>
                         <p> This competition may be encapsulated by a frustration index $x = J_{43} / J_{33}$ </p>
                         <p> This tutorial uses <code>optmagstr</code> to determine the magnetic structure of a geometrically frustrated 
                             lattice as a function of the frustration parameter <p>
+                        <div class="row">
+                            <div class="column"> 
                                 <p> $J_{33}$ tends to favour isolated dimers but $J_{43}$ keeps all spins linked in a network. </p>
                                 <p> For low frustration, the classical ground state is a <i>orthogonal</i> structure where spins on the
                                     same site are perpendicular to each other as shown </p>
                                 <p> At higher frustration $x$, the dimers dominate and the other spins tend to be polarised parallel or
                                     antiparallel to the dimers </p>
                             </div>
+                            <div class="column">
+                                <img src="images/cairo_orth.svg" style="width: 60%; margin-left:20%" alt="cairo orthogonal structure">
+                            </div>
+                        </div>
                     </div>
             </content>
         </div>

@@ -36,7 +36,7 @@ cairo.addatom('r', [p+0.5 p 0.5], 'S', 2.5, 'label', 'MFe3', 'color', 'black');
 
 % Generate the couplings and define the interactions
 cairo.gencoupling()
-% Because the J33 may be longer or shorter than J43 we have to 
+% Because J33 may be longer or shorter than J43 we have to 
 % figure which is the case, since SpinW indexes bonds by length
 if size(cairo.table('bond',1),1) > size(cairo.table('bond',2),1)
     j43_bond = 1;
@@ -89,7 +89,8 @@ k_feri = [1 1 1];
 res_feri = cairo.optmagstr('func', @gm_planar, ...
     'xmin', [ang_min k_feri nm], 'xmax', [ang_max k_feri nm])
 % Print out the energy
-opt_gs_energy = [res_orth.e res_feri.e]
+fprintf('orthogonal state energy: %f\n', res_orth.e);
+fprintf('ferrimagnetic state energy: %f\n', res_feri.e);
 % Plot the structure with the lowest energy
 if res_orth.e < res_feri.e
     plot(res_orth.obj, 'range', [2 2 1])
@@ -130,7 +131,8 @@ res_feri = cairo.optmagsteep()
 % Print out the energy 
 % - the energy is now a vector of length the number of
 %   gradient steps
-opt_gs_energy = [res_orth.e(end) res_feri.e(end)]
+fprintf('orthogonal state energy: %f\n', res_orth.e(end));
+fprintf('ferrimagnetic state energy: %f\n', res_feri.e(end));
 % Plot the structure with the lowest energy
 if res_orth.e(end) < res_feri.e(end)
     plot(res_orth.obj, 'range', [2 2 1])
@@ -183,9 +185,13 @@ res_feri = cairo.optmagstr('func', @gm_planar, ...
     'xmin', [ang_min k_feri nm], 'xmax', [ang_max k_feri nm])
 res_feri = cairo.optmagsteep()
 
-opt_gs_energy = [res_orth.e(end) res_feri.e(end) res_3D.e(end)]
+fprintf('orthogonal state energy: %f\n', res_orth.e(end));
+fprintf('ferrimagnetic state energy: %f\n', res_feri.e(end));
+fprintf('noncoplanar state energy: %f\n', res_3D.e(end));
 
 plot(res_3D.obj, 'range', [2 2 1])
+
+% Does this work? (E.g. for x=1.8, which state has lowest E?)
 
 %%
 % The above unfortunately does not work well to find the
@@ -200,7 +206,7 @@ plot(res_3D.obj, 'range', [2 2 1])
 % Also look at the file rousochatzakis_ansatz.m and check that 
 % you understand the code and how it relates eqs 2-5 in the paper
 
-x = 2.1;
+x = 1.8;
 
 J33 = 1;
 J43 = x * J33;
@@ -222,11 +228,13 @@ res_feri = cairo.optmagstr('func', @gm_planar, ...
     'xmin', [ang_min k_feri nm], 'xmax', [ang_max k_feri nm])
 res_feri = cairo.optmagsteep()
 
-opt_gs_energy = [res_orth.e(end) res_feri.e(end) res_ans.e]
+fprintf('orthogonal state energy: %f\n', res_orth.e(end));
+fprintf('ferrimagnetic state energy: %f\n', res_feri.e(end));
+fprintf('Rousochatzakis ansatz energy: %f\n', res_ans.e(end));
 
 % Plots the structure with the lowest energy
 objs = [res_orth.obj res_feri.obj res_ans.obj];
-[~, idm] = min(opt_gs_energy);
+[~, idm] = min([res_orth.e(end) res_feri.e(end) res_ans.e(end)]);
 plot(objs(idm), 'range', [2 2 1])
 
 %%
@@ -252,6 +260,11 @@ plot(x, sin(theta_p), 'sr');
 sth_theo = sqrt(2 - 4./(x.^2));
 plot(x, sth_theo, '-k');
 plot(x, (x./2) .* sth_theo, '-r');
+legend({'SpinW \theta', 'SpinW \theta''', 'Theory \theta', ...
+    'Theory \theta'''}, 'Location', 'NorthWest')
+xlabel('Frustration ratio $x$', 'interpreter', 'latex');
+ylabel('$\sin \theta$', 'interpreter', 'latex');
+box on;
 
 % Hopefully you should get perfect agreement!
 % (Note that the theoretical expression is only valid for x<2)

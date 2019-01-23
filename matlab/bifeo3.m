@@ -80,6 +80,17 @@ bfo.addaniso('K')
 res = bfo.optmagk('kbase', [1; 1; 0])
 res.k
 
+% What happens if we don't set the basis vector as [1; 1; 0]?
+% E.g. if we used:
+%res = bfo.optmagk()   % without giving 'kbase' option
+
+% What about the energy of this ground state compared to the one with
+% kbase=[1;1;0]? (Note, use:
+%format long g 
+% To print more that 8 significant figures).
+
+% What happens if we increase the value of D? (Or decrease J?)
+
 %%
 % You should find k = [0.0036 0.0036 0] or [0.9964 0.9964 0] because
 % there is no energetic difference between k and 1-k.
@@ -129,6 +140,21 @@ res.k
 
 plot(bfo)
 
+% Calculate the spin wave dispersion around the propagation vector
+% with the ('hermit', false) option and see where the imaginary
+% eigenvalues are (you will have to zoom in to below 2meV).
+
+% Why are there still imaginary energies?
+
+% Print the magnetic moment directions after the optmagk run:
+%bfo.magstr.S
+
+% Now run bfo.optmagsteep print the moments again.
+% What has changed? Why?
+
+% Now plot the spin wave dispersion again. Verify the imaginary
+% energies are gone.
+
 %%
 % You can also try to verify the theoretical dependence of k on 
 % J1 and D
@@ -165,10 +191,6 @@ plot(D, km, '.');
 plot(D, (D./J1)./(2*5.58), '-');
 xlabel('D (meV)'); ylabel('k (r.l.u.)');
 
-% Note the whilst the theoretical expression is good for small
-% D/J1, as D gets larger compared to J1, the calculated k deviates
-% from that predicted.
-% This is because the cycloid state is only stabilised for small
-% D w.r.t. J1. For larger D, a canted AFM (weak FM) state is favoured
-% instead.
+% Is the theoretical expression matched by the calculation?
 
+% If not, why not?
